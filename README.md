@@ -33,6 +33,31 @@ Si el usuario busca un Pokémon que no existe (ejemplo: `pikachu-azul`), la API 
 
 * **Significado:** El servidor funciona bien, pero el recurso solicitado no está en nuestra base de datos.
 * **Acción sugerida:** Verificar que el nombre esté escrito en minúsculas y sin espacios.
+---
+# Auditoría de Documentación y Usabilidad de API 🚀
+
+Este proyecto presenta una auditoría técnica realizada a una guía de integración, aplicando principios de **Comunicación para el Desarrollo** y visión estratégica de **Negocios**.
+
+## 📑 Hallazgos Críticos Identificados
+
+### 1. Vulnerabilidad de Seguridad (Password en URL)
+- **Error:** La guía sugería enviar la contraseña directamente en los parámetros de la URL.
+- **Riesgo:** Las URLs quedan almacenadas en el historial del navegador y registros del servidor, exponiendo credenciales.
+- **Solución:** Implementar el envío de credenciales a través del encabezado de autorización (Authorization Header) o en el cuerpo de una petición POST.
+
+### 2. Ambigüedad en Lógica Financiera (Manejo de Decimales)
+- **Error:** Confusión en la instrucción para el campo de moneda/monto.
+- **Riesgo:** Si el sistema espera centavos (integers) y el usuario envía decimales, se producen errores de cobro o pérdidas económicas.
+- **Solución:** Clarificar que los montos deben enviarse en la unidad mínima de la moneda (ej. centavos) y proporcionar ejemplos claros (e.g., $10.00 = 1000).
+
+### 3. Cumplimiento Legal y Económico (Compliance)
+- **Error:** Referencia a políticas económicas genéricas o de otros países.
+- **Riesgo:** Incumplimiento de regulaciones locales (como normativas bancarias o de protección de datos).
+- **Solución:** Ajustar la documentación para reflejar los marcos legales vigentes del territorio de operación, asegurando la transparencia para el cliente final.
+
+---
+**Auditoría realizada por:** [María Nadal]  
+*Technical Writer con enfoque en Negocios y Comunicación Estratégica.*
 
 ---
 > **Nota de la Redactora:** Este documento fue creado por María como parte de su portafolio de Technical Writing, aplicando conceptos de comunicación clara sobre estructuras de datos reales.
